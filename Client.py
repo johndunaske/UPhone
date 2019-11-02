@@ -1,6 +1,6 @@
 import socket
 
-HOST = '127.0.0.1'  # The server's hostname or IP address
+HOST = 'http://35.226.102.237/'  # The server's hostname or IP address
 PORT = 8080        # The port used by the server
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
