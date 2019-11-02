@@ -19,3 +19,5 @@ import bottle
 @bottle.route("/")
 def home():
     return "hewwo"
+
+bottle.run(host="0.0.0.00", port=8080, debug=True)
