@@ -10,5 +10,5 @@ def translate_text(text, target):
     #print('Detected source lang: ', result['detectedSourceLanguage'])
     return result['translatedText']
 
-example_text = 'como estas'
-print (translate_text(example_text, 'en'))
+#example_text = 'como estas'
+#print (translate_text(example_text, 'en'))

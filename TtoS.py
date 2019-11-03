@@ -17,8 +17,8 @@ def ttos (txt):
     # Build the voice request, select the language code ("en-US") and the ssml
     # voice gender ("neutral")
     voice = texttospeech.types.VoiceSelectionParams(
-        language_code='en-US',
-        name='en-US-Wavenet-A'
+        language_code='es-ES',
+        name='es-ES-Standard-A'
         )
 
     # Select the type of audio file you want returned
@@ -34,3 +34,5 @@ def ttos (txt):
         # Write the response to the output file.
         out.write(response.audio_content)
         print('Audio content written to file "output.wav"')
+
+#ttos("Hola")
