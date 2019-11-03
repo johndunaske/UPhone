@@ -1,15 +1,29 @@
 import socket
+import time
 
-HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
-PORT = 8080        # Port to listen on (non-privileged ports are > 1023)
+host = '127.0.0.1'
+port = 5000
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind((HOST, PORT))
-    s.listen()
-    while True:
-        conn, addr = s.accept()
-        print('Connected by', addr)
-        data = conn.recv(1024)
-        if not data:
-            break
-        conn.sendall(data)
+clients = []
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.bind((host,port))
+s.setblocking(0)
+
+quitting = False
+print("Server Started.")
+while not quitting:
+    try:
+        data, addr = s.recvfrom(1024)
+        if "Quit" in str(data):
+            quitting = True
+        if addr not in clients:
+            clients.append(addr)
+
+        print(time.ctime(time.time()) + str(addr) + ": :" + data.decode())
+        for client in clients:
+            if client != addr:
+                s.sendto(data, client)
+    except:
+        pass
+s.close()
