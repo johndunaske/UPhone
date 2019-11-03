@@ -4,6 +4,8 @@
         name:'login'
     CallScreen:
         name:'call'
+    CallScreenData:
+        name:'data'
 
 
 <LoginScreen>:
@@ -90,6 +92,11 @@
         Rectangle:
             pos: self.pos
             size: self.size
+        Color:
+            rgba:0.3,0.3,0.3,1
+        Rectangle:
+            pos: (155, 0)
+            size:(2, self.height)
     FloatLayout:
         Label:
             text:"Contacts"
@@ -111,7 +118,7 @@
             background_normal:''
             background_color:(0, .7, 1,1)
             on_press:
-                root.manager.current = ''
+                root.manager.current = 'data'
 <CallScreenData>:
     canvas.before:
         Color:
@@ -119,6 +126,11 @@
         Rectangle:
             pos: self.pos
             size: self.size
+        Color:
+            rgba:0.3,0.3,0.3,1
+        Rectangle:
+            pos: (155, 0)
+            size:(2, self.height)
     FloatLayout:
         Label:
             text:"Contacts"
@@ -139,3 +151,43 @@
             font_size:'20dp'
             background_normal:''
             background_color:(0, .7, 1,1)
+        Button:
+            text:'Send'
+            size_hint_x:None
+            size_hint_y:None
+            width:120
+            height:35
+            pos_hint:{'x': 0.8, 'center_y': 0.2}
+            font_size:'20dp'
+            background_normal:''
+            background_color:(0, .7, .2,1)
+            on_press:
+                txt = root.ids.input.text
+                if txt != "":root.ids.msg.text = root.ids.msg.text + "\n" + txt
+
+                root.ids.input.text = ''
+        TextInput:
+            id:input
+            halign:"left"
+            password:False
+            multiline:True
+            size_hint_x:None
+            size_hint_y:None
+            width:430
+            height:35
+            pos_hint:{'x': 0.25, 'center_y': 0.2}
+            font_size:'16dp'
+            color: (0, .7, 1,1)
+        Label:
+            id:msg
+            text:""
+            multiline:True
+            size_hint_x:None
+            size_hint_y:None
+            text_size: self.width, None
+            height: self.texture_size[1]
+            width:430
+            height:35
+            pos_hint:{'x': 0.25, 'center_y': 0.4}
+            font_size:'16dp'
+            color: (0.3, .3, 0.3,1)

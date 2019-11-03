@@ -18,7 +18,7 @@ class LoginScreen(Screen):
 class CallScreen(Screen):
     pass
 
-class CallScreen2(Screen):
+class CallScreenData(Screen):
     pass
 
 # def displayCallScreen(a):
