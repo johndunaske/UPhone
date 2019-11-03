@@ -8,6 +8,7 @@ from google.cloud.speech import enums
 from google.cloud.speech import types
 import pyaudio
 from six.moves import queue
+import TtoS
 
 # Audio recording parameters
 RATE = 16000
@@ -133,11 +134,11 @@ def listen_print_loop(responses):
 
             num_chars_printed = 0
 
-
+#this was main
 def main():
     # See http://g.co/cloud/speech/docs/languages
     # for a list of supported languages.
-    language_code = 'es-MX'#'en-US'  # a BCP-47 language tag
+    language_code = 'en-US'#'en-US'  # a BCP-47 language tag
 
     client = speech.SpeechClient()
     config = types.RecognitionConfig(
@@ -157,7 +158,7 @@ def main():
 
         # Now, put the transcription responses to use.
         listen_print_loop(responses)
-
+        #TtoS.ttos(str(responses))
 
 if __name__ == '__main__':
     main()
