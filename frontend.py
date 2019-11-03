@@ -6,7 +6,7 @@ from kivy.uix.button import Button
 from kivy.core.window import Window
 from kivy.uix.screenmanager import (ScreenManager, Screen, NoTransition,
 SlideTransition, CardTransition, SwapTransition,
-FadeTransition, WipeTransition, FallOutTransition, RiseInTransition)  
+FadeTransition, WipeTransition, FallOutTransition, RiseInTransition)
 
 class MyScreenManager(ScreenManager):
     pass
@@ -16,6 +16,9 @@ class LoginScreen(Screen):
     pass
 
 class CallScreen(Screen):
+    pass
+
+class CallScreen2(Screen):
     pass
 
 # def displayCallScreen(a):

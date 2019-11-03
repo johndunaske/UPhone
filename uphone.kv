@@ -40,6 +40,7 @@
             height:35
             pos_hint:{'x': 0.45, 'center_y': 0.6}
             font_size:'16dp'
+            color: (0, .7, 1,1)
         Label:
             text:"Password:"
             size_hint_x:None
@@ -58,6 +59,7 @@
             height:35
             pos_hint:{'x': 0.45, 'center_y': 0.53}
             font_size:'16dp'
+            color: (0, .7, 1,1)
         Button:
             text:'Log in!'
             size_hint_x:None
@@ -90,11 +92,50 @@
             size: self.size
     FloatLayout:
         Label:
-            text:"You made it past the login!"
+            text:"Contacts"
             size_hint_x:None
             size_hint_y:None
-            width:300
+            width:150
             height:50
-            pos_hint:{'x': 0.31, 'center_y': 0.8}
-            font_size:'60dp'
-            color: (0, .7, 1,1)
+            pos_hint:{'x': 0, 'center_y': 0.95}
+            font_size:'26dp'
+            color: (0.2, 0.2, 0.2,1)
+        Button:
+            text:'Ale'
+            size_hint_x:None
+            size_hint_y:None
+            width:140
+            height:35
+            pos_hint:{'x': 0.01, 'center_y': 0.85}
+            font_size:'20dp'
+            background_normal:''
+            background_color:(0, .7, 1,1)
+            on_press:
+                root.manager.current = ''
+<CallScreenData>:
+    canvas.before:
+        Color:
+            rgba:1,1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            text:"Contacts"
+            size_hint_x:None
+            size_hint_y:None
+            width:150
+            height:50
+            pos_hint:{'x': 0, 'center_y': 0.95}
+            font_size:'26dp'
+            color: (0.2, 0.2, 0.2,1)
+        Button:
+            text:'Ale'
+            size_hint_x:None
+            size_hint_y:None
+            width:140
+            height:35
+            pos_hint:{'x': 0.01, 'center_y': 0.85}
+            font_size:'20dp'
+            background_normal:''
+            background_color:(0, .7, 1,1)
